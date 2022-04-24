@@ -11,8 +11,8 @@ const to_mall_cart = () => {
 }
 
 const submit_order = (count,clicks) => {
-		toast('抢菜第'+count+'次尝试')
-		//美团买菜 结算按钮无id
+	toast('抢菜第'+count+'次尝试')
+	//美团买菜 结算按钮无id
         while(true){
             if(textStartsWith('结算').exists()){
                 submit_btn=textStartsWith('结算').findOne()
@@ -36,29 +36,30 @@ const submit_order = (count,clicks) => {
                 textStartsWith('我知道了').findOne().parent().click()
                 break;
             }else if(textStartsWith('返回购物车').exists()){
-				textStartsWith('返回购物车').findOne().parent().click()
+		textStartsWith('返回购物车').findOne().parent().click()
                 break;
-			}else if(textStartsWith('放弃机会').exists()){
+	    }else if(textStartsWith('放弃机会').exists()){
                 textStartsWith('放弃机会').findOne().parent().click()
                 break;
             }if(textStartsWith('极速支付').exists()){
-				textStartsWith('极速支付').findOne().parent().click()
-			}if(textStartsWith('立即支付').exists()){
-				textStartsWith('立即支付').findOne().parent().click()
-			}else{
+		textStartsWith('极速支付').findOne().parent().click()
+	    }if(textStartsWith('立即支付').exists()){
+		textStartsWith('立即支付').findOne().parent().click()
+	    }else{
                 break
             }
         }
-		sleep(100)
-		count=count+1;
-		if(count>18000){
-			toast('抢菜失败')
-			exit;
-		}
-		submit_order(count,clicks)
+	sleep(100)
+	count=count+1;
+	if(count>18000){
+	   toast('抢菜失败')
+	   exit;
+	}
+	submit_order(count,clicks)
 }
 
 const start = () => {
+    toast("okokokokokokokokokokokok")
     kill_app('美团买菜')
     
 	const appName = "美团买菜";
