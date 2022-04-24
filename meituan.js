@@ -59,7 +59,6 @@ const submit_order = (count,clicks) => {
 }
 
 const start = () => {
-    toast("okokokokokokokokokokokok")
     kill_app('美团买菜')
     
 	const appName = "美团买菜";
